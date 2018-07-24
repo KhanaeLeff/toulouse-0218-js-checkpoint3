@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Item from './Item'
 import './PlayaList.css'
 import logo from './mojito.ico'
+import benoit from './benoit.jpg'
 
 const items = [
   {
@@ -36,7 +37,7 @@ class App extends Component {
       <div className="PlayaList">
 
         <header className="PlayaList-header">
-          <img src={logo} className="PlayaList-logo" alt="logo" />
+          <img src={benoit} className="PlayaList-logo" alt="logo" />
           <h1 className="PlayaList-title">PlayaList</h1>
         </header>
 
@@ -54,12 +55,13 @@ class App extends Component {
         </div>*/}
 
         <div className="PlayaList-list">
-          <Item item={items[0]} />
-          <Item item={items[1]} />
-          <Item item={items[2]} />
-          <Item item={items[3]} />
+          {
+            items.map(
+              (item) => <Item
+              item={item} />
+            )
+          }
         </div>
-
       </div>
     )
   }
